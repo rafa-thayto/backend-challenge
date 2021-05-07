@@ -18,7 +18,7 @@ namespace Iti.Challenge.Application.Commands
             {
                 res.Message = "Sua senha precisa ter nove ou mais caracteres.";
             }
-            else if (!(Regex.Match(request.Password, @"[A-Za-z\d]").Success))
+            else if (!(Regex.Match(request.Password, @"[A-Za-z]").Success && Regex.Match(request.Password, @"[\d]").Success))
             {
                 res.Message = "Sua senha precisa ter letras e números.";
             }
